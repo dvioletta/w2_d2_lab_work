@@ -27,11 +27,13 @@ attr_writer :total_till
     end
   end
 
-  def get_drink(drink)
-    drink = @drinks.pop  #here we can only offer a random drink to the customer
-    @till += get_price(drink)
-  end
-
-
+  def get_drink(drink_requested)
+     for drink in @drinks
+       if drink_requested == drink.name
+        return drink
+       end
+         # @till += get_price(drink)
+      end
+    end
 
 end
