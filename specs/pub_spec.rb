@@ -43,6 +43,12 @@ class TestPub < MiniTest::Test
     assert_equal(1, @pub.total_drinks)
   end
 
-
+  def test_get_drink_for_the_customer__add_money_to_till()
+    @pub.add_drink(@drink_1)
+    @pub.add_drink(@drink_2)
+    @pub.get_drink(@drink_1)
+    assert_equal(1, @pub.total_drinks)
+    assert_equal(123, @pub.total_till)
+  end
 
 end
