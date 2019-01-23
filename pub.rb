@@ -21,8 +21,16 @@ attr_writer :total_till
     @drinks << drink
   end
 
+  def get_price(drink)
+    for drink in @drinks
+      return drink.price
+    end
+  end
+
   def get_drink(drink)
     drink = @drinks.pop  #here we can only offer a random drink to the customer
   end
+
+
 
 end
