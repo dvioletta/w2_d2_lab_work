@@ -11,6 +11,13 @@ class Customer
     @drinks = []
   end
 
+  def total_wallet()
+    return @wallet
+  end
 
+  def buy_drink(pub)
+    drink = pub.get_drink(drink)
+    @drinks << drink if !drink.nil?
+  end
 
 end
