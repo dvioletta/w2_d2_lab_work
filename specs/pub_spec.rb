@@ -32,5 +32,10 @@ class TestPub < MiniTest::Test
   end
 
   def test_get_drink_for_the_customer()
+    @pub.add_drink(@drink_1)
+    @pub.add_drink(@drink_2)
+    @pub.get_drink(@drink_1)
+    assert_equal(1, @pub.total_drinks)
+  end
 
 end
