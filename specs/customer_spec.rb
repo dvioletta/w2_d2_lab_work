@@ -41,5 +41,12 @@ class TestCustomer < MiniTest::Test
     assert_equal(1, @customer.drinks.length)
   end
 
+  def test_buy_a_drink__customer_paid()
+    @pub.add_drink(@drink_1)
+    @pub.add_drink(@drink_2)
+    @customer.buy_drink(@pub)
+    assert_equal(1, @customer.drinks.length)
+    assert_equal(37, @customer.total_wallet)
+  end
 
 end

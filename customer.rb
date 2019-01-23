@@ -24,6 +24,7 @@ class Customer
   def buy_drink(pub)
     drink = pub.get_drink(drink)
     @drinks << drink if !drink.nil?
+    pay_for_drink(pub)
   end
 
 end
